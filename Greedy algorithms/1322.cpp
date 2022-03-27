@@ -8,23 +8,42 @@ int main()
 {
     int k[inf];
     int boom[inf];
-    int time=1;
-    int a=1,b=1;
+    int time=0;
+    int a=0;
     while(cin>>boom[time])
     {
         time++;
     }
-    k[1]=boom[1];
-    for(int i=2;i<=time;i++)
+    /*for(int b=1;b<7;b++)
     {
-        int tmp=0;
-        for(int j=1;j<a;j++)
+        cin>>boom[b];
+    }*/
+    k[0]=boom[0];
+    for(int i=1;i<time;i++)
+    {
+        int tmp=40000;
+        int flag=0;
+        int post=0;
+        for(int j=0;j<=a;j++)
         {
-            if(k[j]>boom[i]&&)
+            if(k[j]>=boom[i]&&tmp>k[j])
             {
-
+                flag=1;
+                post=j;
+                tmp=k[j];
+                //cout<<"cao"<<endl;
             }
         }
+        if(flag==0)
+        {
+            //cout<<"get"<<endl;
+            a++;
+            k[a]=boom[i];
+        }
+        else{
+            k[post]=boom[i];
+        }
     }
+    cout<<a+1<<endl;
     return 0;
 }
